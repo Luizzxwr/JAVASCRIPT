@@ -1,0 +1,93 @@
+1- Adicionando JavaScript a um arquivo HTML:
+Você pode incorporar JavaScript diretamente em uma página HTML usando a tag <script>. Por exemplo:
+
+---------------------------------------------------------------------------------
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de JavaScript</title>
+</head>
+<body>
+    <h1>Exemplo de JavaScript</h1>
+    <button onclick="alert('Olá mundo!')">Clique aqui</button>
+    <script>
+        // Seu código JavaScript aqui
+        console.log("Olá mundo!");
+    </script>
+</body>
+</html>
+---------------------------------------------------------------------------------
+
+2- Separando o JavaScript em um arquivo externo:
+É uma prática recomendada separar o código JavaScript em um arquivo externo e, em seguida, referenciá-lo na página HTML usando a tag <script> com o atributo src. Por exemplo:
+
+---------------------------------------------------------------------------------
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de JavaScript Externo</title>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h1>Exemplo de JavaScript Externo</h1>
+    <button id="btn">Clique aqui</button>
+</body>
+</html>
+---------------------------------------------------------------------------------
+
+E o conteúdo do arquivo script.js:
+
+---------------------------------------------------------------------------------
+// script.js
+document.getElementById('btn').addEventListener('click', function() {
+    alert('Olá mundo!');
+});
+---------------------------------------------------------------------------------
+
+3- Manipulando o DOM:
+JavaScript é frequentemente usado para manipular o DOM (Document Object Model), permitindo interatividade dinâmica com a página. Por exemplo:
+
+---------------------------------------------------------------------------------
+// Alterar o conteúdo de um elemento
+document.getElementById('elemento').innerHTML = 'Novo conteúdo';
+
+// Adicionar um novo elemento
+var novoElemento = document.createElement('p');
+novoElemento.textContent = 'Texto do novo parágrafo';
+document.body.appendChild(novoElemento);
+
+// Adicionar um evento de clique a um botão
+document.getElementById('botao').addEventListener('click', function() {
+    alert('Botão clicado!');
+});
+---------------------------------------------------------------------------------
+
+4- Reagir a eventos:
+JavaScript permite responder a eventos do usuário, como cliques de mouse, pressionamentos de teclas e envios de formulários. Por exemplo:
+
+---------------------------------------------------------------------------------
+document.getElementById('meuBotao').addEventListener('click', function() {
+    // Ação a ser realizada quando o botão for clicado
+    console.log('Botão clicado!');
+});
+---------------------------------------------------------------------------------
+
+5- Trabalhando com APIs e dados assíncronos:
+JavaScript pode ser usado para interagir com APIs externas, enviar e receber dados assíncronos e atualizar dinamicamente a página com os resultados. Por exemplo:
+
+---------------------------------------------------------------------------------
+fetch('https://api.exemplo.com/dados')
+    .then(response => response.json())
+    .then(data => {
+        // Manipular os dados recebidos
+        console.log(data);
+    })
+    .catch(error => {
+        // Lidar com erros de requisição
+        console.error('Erro ao buscar dados:', error);
+    });
+---------------------------------------------------------------------------------
